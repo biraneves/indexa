@@ -1,0 +1,10 @@
+h2 {
+  font-family: var(--main-font);
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--blue-500);
+  padding-bottom: 8px;
+  border-bottom: solid 1px var(--blue-500);
+}
