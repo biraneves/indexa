@@ -1,5 +1,12 @@
 <bn-container>
   <bn-header />
+
+  <input
+    type="search"
+    placeholder="Digite para buscar"
+    [(ngModel)]="filterByText"
+  />
+
   @for (letter of alphabet; track letter) {
   <bn-divider>{{ letter }}</bn-divider>
   @for (contact of filterContactsByInitial(letter); track contact.id) {
