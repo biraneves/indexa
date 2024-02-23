@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-container',
+  selector: 'bn-container',
   standalone: true,
   imports: [],
   templateUrl: './container.component.html',
-  styleUrl: './container.component.css'
+  styleUrl: './container.component.css',
 })
-export class ContainerComponent {
-
-}
+export class ContainerComponent {}
