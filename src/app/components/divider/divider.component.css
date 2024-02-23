@@ -8,4 +8,5 @@ h2 {
   padding-bottom: 8px;
   border-bottom: solid 1px var(--blue-500);
   text-transform: uppercase;
+  margin-bottom: 24px;
 }
