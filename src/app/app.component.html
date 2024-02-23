@@ -2,7 +2,7 @@
   <bn-header />
   @for (letter of alphabet; track letter) {
   <bn-divider>{{ letter }}</bn-divider>
-  <bn-contact name="Zacarias" phone="555-1234" />
-  <bn-contact name="Zacarias" phone="555-1234" />
-  }
+  @for (contact of filterContactsByInitial(letter); track contact.id) {
+  <bn-contact [name]="contact.name" [phone]="contact.phone" />
+  } }
 </bn-container>
