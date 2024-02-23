@@ -19,5 +19,5 @@ import { DividerComponent } from './components/divider/divider.component';
   ],
 })
 export class AppComponent {
-  title = 'indexa';
+  alphabet: string = 'abcdefghijklmnopqrstuvwxyz';
 }

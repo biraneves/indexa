@@ -1,6 +1,6 @@
 <bn-container>
   <bn-header />
-  <bn-divider>A</bn-divider>
-  <bn-divider>B</bn-divider>
-  <bn-divider>C</bn-divider>
+  @for (letter of alphabet; track letter) {
+  <bn-divider>{{ letter }}</bn-divider>
+  }
 </bn-container>
