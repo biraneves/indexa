@@ -6,12 +6,7 @@ import { DividerComponent } from '../../components/divider/divider.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { RouterLink } from '@angular/router';
 import { ContactService } from '../../services/contact.service';
-
-interface Contact {
-  id: number;
-  name: string;
-  phone: string;
-}
+import { Contact } from '../../components/contact/contact';
 
 @Component({
   selector: 'bn-contacts-list',

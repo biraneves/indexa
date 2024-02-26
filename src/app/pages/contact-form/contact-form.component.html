@@ -73,7 +73,9 @@
       formControlName="obs"
     ></textarea>
     <section class="buttons">
-      <button class="cancel-button" type="button">Cancelar</button>
+      <button class="cancel-button" type="button" (click)="cancel()">
+        Cancelar
+      </button>
       <button
         type="submit"
         [ngClass]="contactForm.valid ? 'save-button' : 'disabled-button'"

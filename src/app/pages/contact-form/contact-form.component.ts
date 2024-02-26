@@ -8,7 +8,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'bn-contact-form',
@@ -26,6 +27,8 @@ import { RouterLink } from '@angular/router';
 export class ContactFormComponent implements OnInit {
   contactForm!: FormGroup;
 
+  constructor(private contactService: ContactService, private router: Router) {}
+
   ngOnInit(): void {
     this.initForm();
   }
@@ -42,8 +45,18 @@ export class ContactFormComponent implements OnInit {
   }
 
   saveContact() {
+    const newContact = this.contactForm.value;
+
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
+      this.contactService.saveContact(newContact);
     }
+
+    this.contactForm.reset();
+    this.router.navigateByUrl('/contacts-list');
+  }
+
+  cancel() {
+    this.contactForm.reset();
+    this.router.navigateByUrl('/contacts-list');
   }
 }
