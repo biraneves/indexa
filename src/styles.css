@@ -17,8 +17,8 @@
   --black: #000;
 
   /* Typography */
-  --subtitle-large: "Zen Dots", sans-serif;
-  --main-font: "Montserrat", sans-serif;
+  --subtitle-large: "Montserrat", sans-serif;
+  --main-font: "Quicksand", sans-serif;
 }
 
 * {
@@ -31,6 +31,6 @@ body {
   width: 100vw;
   min-height: 100vh;
   font-family: var(--main-font);
-  color: var(--gray-900);
-  background: linear-gradient(180deg, var(--blue-400) 0%, var(--blue-100) 100%);
+  color: var(--white);
+  background: linear-gradient(45deg, var(--black) 0%, var(--gray-900) 100%);
 }

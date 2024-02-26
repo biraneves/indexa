@@ -1,3 +1,5 @@
+<bn-contact-form />
+
 <bn-container>
   <bn-header />
 
@@ -7,9 +9,10 @@
     [(ngModel)]="filterByText"
   />
 
-  @for (letter of alphabet; track letter) {
+  @for (letter of alphabet; track letter) { @if
+  (filterContactsByInitial(letter).length > 0) {
   <bn-divider>{{ letter }}</bn-divider>
   @for (contact of filterContactsByInitial(letter); track contact.id) {
   <bn-contact [name]="contact.name" [phone]="contact.phone" />
-  } }
+  } }}
 </bn-container>
