@@ -167,3 +167,14 @@ input:focus {
   color: red;
   margin-bottom: 12px;
 }
+
+@media screen and (max-width: 767px) {
+  label {
+    font-size: 1rem;
+  }
+
+  .buttons button {
+    width: 148px;
+    font-size: 0.75rem;
+  }
+}

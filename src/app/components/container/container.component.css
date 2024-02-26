@@ -7,4 +7,10 @@
   margin: 80px auto;
   padding: 56px 134px;
   box-shadow: 0 8px 16px 0 rgba(61, 139, 253, 0.15);
+
+  @media screen and (max-width: 767px) {
+    width: 95vh;
+    margin: 40px auto;
+    padding: 8px;
+  }
 }
