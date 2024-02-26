@@ -1,19 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { ContainerComponent } from './components/container/container.component';
-import { HeaderComponent } from './components/header/header.component';
-import { DividerComponent } from './components/divider/divider.component';
-import { ContactComponent } from './components/contact/contact.component';
-import contactsList from './agenda.json';
-import { FormsModule } from '@angular/forms';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
-
-interface Contact {
-  id: number;
-  name: string;
-  phone: string;
-}
+import { ContactsListComponent } from './pages/contacts-list/contacts-list.component';
 
 @Component({
   selector: 'app-root',
@@ -23,42 +12,8 @@ interface Contact {
   imports: [
     CommonModule,
     RouterOutlet,
-    ContainerComponent,
-    HeaderComponent,
-    DividerComponent,
-    ContactComponent,
-    FormsModule,
     ContactFormComponent,
+    ContactsListComponent,
   ],
 })
-export class AppComponent {
-  alphabet: string = 'abcdefghijklmnopqrstuvwxyz';
-  contacts: Contact[] = contactsList;
-  filterByText: string = '';
-
-  private removeAccents(text: string): string {
-    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  }
-
-  filterContactsByText(): Contact[] {
-    if (!this.filterByText) return this.contacts;
-
-    const filteredContacts = this.contacts.filter((contact) =>
-      this.removeAccents(contact.name)
-        .toLowerCase()
-        .includes(this.removeAccents(this.filterByText).toLowerCase())
-    );
-
-    return filteredContacts;
-  }
-
-  filterContactsByInitial(letter: string): Contact[] {
-    const filteredContacts = this.filterContactsByText().filter((contact) =>
-      this.removeAccents(contact.name)
-        .toLowerCase()
-        .startsWith(this.removeAccents(letter))
-    );
-
-    return filteredContacts;
-  }
-}
+export class AppComponent {}

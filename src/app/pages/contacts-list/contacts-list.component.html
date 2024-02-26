@@ -1,0 +1,23 @@
+<bn-container>
+  <bn-header />
+
+  <input
+    type="search"
+    placeholder="Digite para buscar"
+    [(ngModel)]="filterByText"
+  />
+
+  <section class="add-contact">
+    <button routerLink="/form">
+      <img src="/assets/images/icons/plus.png" alt="" />
+      <span>Adicionar contato</span>
+    </button>
+  </section>
+
+  @for (letter of alphabet; track letter) { @if
+  (filterContactsByInitial(letter).length > 0) {
+  <bn-divider>{{ letter }}</bn-divider>
+  @for (contact of filterContactsByInitial(letter); track contact.id) {
+  <bn-contact [name]="contact.name" [phone]="contact.phone" />
+  } }}
+</bn-container>

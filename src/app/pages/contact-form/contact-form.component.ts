@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'bn-contact-form',
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     DividerComponent,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css',
