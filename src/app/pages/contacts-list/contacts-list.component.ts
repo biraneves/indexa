@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../../components/contact/contact.component';
 import { ContainerComponent } from '../../components/container/container.component';
 import { DividerComponent } from '../../components/divider/divider.component';
 import { HeaderComponent } from '../../components/header/header.component';
-import contactsList from '../../agenda.json';
 import { RouterLink } from '@angular/router';
+import { ContactService } from '../../services/contact.service';
 
 interface Contact {
   id: number;
@@ -27,10 +27,16 @@ interface Contact {
   templateUrl: './contacts-list.component.html',
   styleUrl: './contacts-list.component.css',
 })
-export class ContactsListComponent {
+export class ContactsListComponent implements OnInit {
   alphabet: string = 'abcdefghijklmnopqrstuvwxyz';
-  contacts: Contact[] = contactsList;
+  contacts: Contact[] = [];
   filterByText: string = '';
+
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit() {
+    this.contacts = this.contactService.getContacts();
+  }
 
   private removeAccents(text: string): string {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
